@@ -1,0 +1,1 @@
+DeviceFileEvents | where FileName has_any ("xmrig.exe","miner.exe")

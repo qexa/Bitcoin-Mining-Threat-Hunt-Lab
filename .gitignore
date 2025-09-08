@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Python / build
+__pycache__/
+*.pyc
+dist/
+build/
+
+# Archives
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Logs
+*.log
+
+# Misc
+*.tmp

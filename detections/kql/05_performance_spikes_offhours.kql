@@ -1,0 +1,1 @@
+DevicePerformanceEvents | where CounterValue > 75 and (hour(TimeGenerated)>=22 or hour(TimeGenerated)<6)

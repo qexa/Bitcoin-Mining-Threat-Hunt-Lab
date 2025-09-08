@@ -1,0 +1,1 @@
+DeviceNetworkEvents | where RemotePort in (3333,4444,5555,7777,14444)
