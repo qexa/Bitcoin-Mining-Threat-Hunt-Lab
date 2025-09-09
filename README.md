@@ -1,63 +1,49 @@
 # Bitcoin / Cryptomining Threat Hunt Lab (Microsoft Defender XDR)
 
-![Status](https://img.shields.io/badge/Lab-Ready-brightgreen)
-![Hunting](https://img.shields.io/badge/KQL-Queries-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-![Platform](https://img.shields.io/badge/Platform-Microsoft%20Defender%20XDR-purple)
-![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Platform](https://img.shields.io/badge/Platform-Microsoft%20Defender%20XDR-blue)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-> **Bitcoin / Cryptomining Threat Hunt Lab**  
-> Hands-on lab for simulating and detecting unauthorized cryptomining (e.g., Bitcoin/Monero miners) in Microsoft Defender XDR.  
-> Includes safe attacker simulation scripts, KQL detections, watchlists, and an IR playbook to help analysts practice hunting high CPU usage, persistence, and mining pool traffic.
+## 🔎 Overview
+A practical threat hunting lab built for **Microsoft Defender XDR** to simulate, detect, and respond to unauthorized cryptomining activity (e.g., Bitcoin, Monero).  
 
----
-
-## Why this Hunt?
-- **Management directive** after security news of cryptojacking.
-- **Unusual behavior**: sustained CPU/GPU spikes, user complaints of slow performance.
-- Objective: **Detect and eradicate unauthorized mining activity**.
+The lab provides **safe attacker simulations** and **ready-to-run detection content**, helping analysts sharpen their hunting skills against cryptojacking techniques such as high CPU usage, persistence, and suspicious mining pool traffic.  
 
 ---
 
-## Features
-- **Simulation Mode**: Safe PowerShell scripts that simulate miner-like behavior (file, process, network, persistence, CPU load).
-- **Realistic Mode**: Optional loopback-only xmrig run for advanced users (no external pools).
-- **Ready-to-run KQL queries** (8 queries).
-- **Watchlist CSV** of mining pool domains.
-- **IR playbook** and **cleanup script**.
+## ⚡ Why This Lab?
+Cryptojacking is a growing enterprise threat that silently consumes resources while degrading performance. This lab recreates real-world conditions where cryptomining may occur:
+
+- Persistent **CPU/GPU spikes**  
+- **User complaints** about sluggish performance  
+- **Network beacons** to mining pools  
+- **Suspicious persistence mechanisms**  
+
+🎯 **Objective:** Detect, investigate, and eradicate cryptomining with Defender XDR.
 
 ---
 
-## Quick Start
-1. Clone or unzip repo.
-2. Run simulation:
-   ```powershell
-   .\lab\attacker\simulate-cryptominer.ps1
-   ```
-3. Run queries in `/detections/kql/` in order.
-4. Cleanup:
-   ```powershell
-   .\cleanup\cleanup.ps1
-   ```
+## 🛠 Features
+- **Simulation Mode** → Safe PowerShell scripts to mimic miner-like behavior (process, file, network, CPU load).  
+- **Realistic Mode** → Optional loopback-only `xmrig` miner execution for advanced users (no external traffic).  
+- **Detection Content** → 8 KQL queries for processes, file events, network activity, persistence, and resource anomalies.  
+- **Threat Intel Integration** → Watchlist CSV of known mining pool domains.  
+- **Response Toolkit** → IR playbook + automated cleanup script.  
 
 ---
 
-## Repo Layout
-```
-Bitcoin-Mining-Threat-Hunt-Lab/
-├─ README.md
-├─ LICENSE
-├─ .gitignore
-├─ docs/
-├─ lab/attacker/
-├─ detections/kql/
-├─ watchlists/
-├─ playbooks/
-├─ cleanup/
-└─ artifacts/
-```
+## 🚀 Quick Start
 
----
+```powershell
+# 1. Clone the repository
+git clone https://github.com/<your-org>/Bitcoin-Mining-Threat-Hunt-Lab.git
+cd Bitcoin-Mining-Threat-Hunt-Lab
 
-## License
-Licensed under MIT.
+# 2. Run simulation (safe mode)
+.\lab\attacker\simulate-cryptominer.ps1
+
+# 3. Run detection queries
+# Located in /detections/kql/ (execute in sequence)
+
+# 4. Cleanup the environment
+.\cleanup\cleanup.ps1
