@@ -1,1 +1,1 @@
-DeviceDnsEvents | where Name has_any ("slushpool.com","supportxmr.com")
+DeviceDnsEvents | where Name has_any ('slushpool.com','supportxmr.com')

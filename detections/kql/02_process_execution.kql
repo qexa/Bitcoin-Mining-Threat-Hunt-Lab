@@ -1,1 +1,1 @@
-DeviceProcessEvents | where FileName in~ ("xmrig.exe","cpuminer.exe")
+DeviceProcessEvents | where FileName in~ ('xmrig.exe','cpuminer.exe')
