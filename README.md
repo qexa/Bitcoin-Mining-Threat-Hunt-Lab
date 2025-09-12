@@ -6,32 +6,25 @@
 ![Platform](https://img.shields.io/badge/Platform-Microsoft%20Defender%20XDR-purple)
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange)
 
-## 📖 Overview
-This repository provides a **hands-on threat hunting lab** to simulate and detect **unauthorized cryptocurrency mining (cryptojacking)** within Microsoft Defender XDR.  
+---
 
-You will learn how to:  
-- Simulate miner-like activity safely in a lab environment.  
-- Detect miner files, processes, scheduled tasks, and network traffic using **Advanced Hunting (KQL)**.  
-- Build watchlists for known mining pools.  
-- Apply an **Incident Response Playbook** to contain, eradicate, and recover from incidents.  
+## 📖 Overview
+This repository provides a **hands-on cybersecurity lab** designed to simulate and detect **unauthorized cryptocurrency mining (cryptojacking)** within Microsoft Defender XDR environments.  
+
+Cryptojacking is a persistent threat tactic that hijacks computing resources for mining cryptocurrency, often leading to:  
+- ⚠️ High CPU/GPU utilization and reduced performance  
+- ⚠️ Increased electricity and infrastructure costs  
+- ⚠️ Security blind spots that attackers can exploit  
+
+This lab helps SOC analysts, students, and defenders practice **threat hunting**, **KQL detection queries**, and **incident response workflows**.
 
 ---
 
 ## 🎯 Objectives
-- Practice **threat hunting** against realistic cryptomining scenarios.  
-- Correlate telemetry across **file, process, network, DNS, performance, and persistence events**.  
-- Strengthen detection and response playbooks against cryptojacking campaigns.  
+- Simulate miner-like activity safely in a controlled lab.  
+- Detect file, process, persistence, network, DNS, and performance indicators.  
+- Correlate telemetry across multiple Defender XDR tables.  
+- Apply a structured **Incident Response Playbook** to containment, eradication, and recovery.  
 
 ---
 
-## 🏗️ Lab Architecture
-
-```mermaid
-flowchart LR
-    A[Attacker / Rogue User] -->|drops miner files| B[(Endpoint)]
-    B -->|Scheduled Task| C[Persistence]
-    B -->|High CPU Usage| D[Performance Anomaly]
-    B -->|Stratum Protocol Traffic| E[Mining Pools]
-    B -->|File/Process/Network Logs| F[Defender Sensors]
-    F -->|Advanced Hunting KQL| G[Threat Hunts]
-    G -->|Analyst Actions| H[Containment & Recovery]
